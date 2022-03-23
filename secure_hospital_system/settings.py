@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'secure_hospital_system',
-    'patient_portal.apps.PatientPortalConfig',
+    'patient_portal',
+    'django_tables2',
+    'django_filters',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -85,8 +88,12 @@ WSGI_APPLICATION = 'secure_hospital_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'CSE545_Group1',
+        'USER': 'postgres',
+        'PASSWORD': 'ANSHNARAD180499',
+        'HOST': 'localhost',
+        'PORT' : '5432'
     }
 }
 
@@ -144,3 +151,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_on_heroku.settings(locals())
 
+DJANGO_TABLES2_TEMPLATE = "django_tables2/bootstrap.html" 
